@@ -7,9 +7,9 @@ import operator
 
 board = [
     [0, 0, 0, 0],
-    [0, 0, 2, 0],
     [0, 0, 0, 0],
-    [0, 2, 2, 0]
+    [0, 0, 0, 0],
+    [0, 0, 0, 0]
 ]
 
 
@@ -110,8 +110,8 @@ app.focus_set()
 app.bind("<Key>", Pressed)
 
 
-#addNum(board)
-#addNum(board)
+addNum(board)
+addNum(board)
 
 app.draw(board)
 
