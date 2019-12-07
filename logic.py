@@ -84,8 +84,6 @@ def changeBoard(press):
         for y in reversed(range(4)):
             for x in reversed(range(4)):
                 logic(board, y, x, 1, 1)
-                
-    addNum(board)
 
 def Pressed(e):
     press = e.keysym
@@ -93,9 +91,8 @@ def Pressed(e):
     if press == "Up" or press == "Down" or press == "Right" or press == "Left":
         changeBoard(press)
     
-    #addNum(board)
+    addNum(board)
     app.draw(board)
-
 
 
 root = tk.Tk()
