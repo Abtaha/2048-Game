@@ -100,7 +100,7 @@ root = tk.Tk()
 root.title("2048")
 root.geometry("500x500")
 
-app = Game(master=root, colorCoded = True)
+app = Game(master=root, colorCoded = True, title = "2048")
 
 
 app.focus_set()

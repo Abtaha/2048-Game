@@ -2,8 +2,10 @@ import tkinter as tk
 
 
 class Game(tk.Frame):
-    def __init__(self, master=None, colorCoded=False):
+    def __init__(self, master=None, colorCoded=False, title=""):
         super().__init__(master)
+        
+        self.title = title
         
         self.master = master
         self.colorCoded = colorCoded
@@ -34,16 +36,16 @@ class Game(tk.Frame):
             return "#C7BBAF", "#7B7269"
     
     def draw(self, board):
-        title = tk.Label(self, text = "2048", fg = "#7B7269")
+        title = tk.Label(self, text = self.title, fg = "#7B7269")
         title.place(relwidth = 1, relheight = 0.15)
         title.config(font=("Arial", 30))
         
         self.frame = tk.Frame(self)
         self.frame.place(relwidth = 0.8, relheight = 0.8, relx = 0.1, rely=0.15)
 
-        a = 0.25
-        for y in range(4):
-            for x in range(4):
+        a = 1 / len(board)
+        for y in range(len(board)):
+            for x in range(len(board[y])):
                 text = board[y][x]
                 
                 if self.colorCoded == True:
